@@ -35,7 +35,7 @@ const UserResponses: React.FC = () => {
     const fetchUserResponse = async () => {
       try {
         ; // Replace with dynamic email if needed
-        const response = await fetch(`https://speakingserver.vercel.app/?vercelToolbarCode=VAn6poAFX8kQl1z/user-response?email=${user?.primaryEmailAddress?.emailAddress}`,{
+        const response = await fetch(`https://speakingserver.vercel.app/user-response?email=${user?.primaryEmailAddress?.emailAddress}`,{
             method:"GET",
             headers:{
                 "Content-Type":"application/json",

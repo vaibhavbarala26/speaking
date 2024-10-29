@@ -148,7 +148,7 @@ const Home = () => {
   const handleStart = async()=>{
   setLoading(true)
   console.log(languages , level , domain);
-  const response = await fetch("http://localhost:1042/chat" , {
+  const response = await fetch("https://speakingserver.vercel.app/chat" , {
     method:"POST",
     headers:{
       "Content-type":"application/json"
@@ -163,7 +163,7 @@ const Home = () => {
   useEffect(() => {
     const auth = async () => {
       try {
-        const res = await fetch("https://speakingserver.vercel.app/?vercelToolbarCode=VAn6poAFX8kQl1z/auth", {
+        const res = await fetch("https://speakingserver.vercel.app/auth", {
           headers: {
             "Content-Type": "application/json",
           },
