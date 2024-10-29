@@ -6,7 +6,7 @@ const Login = () => {
   const {user}=useClerk()
   useEffect(()=>{
     const auth = async ()=>{
-      const res = await fetch("http:localhost:1042/auth" , {
+      const res = await fetch("https://speakingserver.vercel.app/?vercelToolbarCode=VAn6poAFX8kQl1z/auth" , {
         headers:{
           "Content-type":"application/json",
           

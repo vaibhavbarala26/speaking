@@ -163,7 +163,7 @@ const Home = () => {
   useEffect(() => {
     const auth = async () => {
       try {
-        const res = await fetch("http://localhost:1042/auth", {
+        const res = await fetch("https://speakingserver.vercel.app/?vercelToolbarCode=VAn6poAFX8kQl1z/auth", {
           headers: {
             "Content-Type": "application/json",
           },
@@ -197,7 +197,7 @@ const Home = () => {
     setShowresult(true)
     console.log(text , response?.topic , user?.fullName , user?.primaryEmailAddress?.emailAddress);
    
-    const Response = await fetch("http://localhost:1042/user-chat" , {
+    const Response = await fetch("https://speakingserver.vercel.app/?vercelToolbarCode=VAn6poAFX8kQl1z/user-chat" , {
       body:JSON.stringify({userinput:text , topic:response?.topic , name:user?.fullName , email:user?.primaryEmailAddress?.emailAddress  } ),
       method:"POST",
       headers:{

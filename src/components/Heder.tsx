@@ -13,7 +13,7 @@ const Heder = () => {
   useEffect(() => {
     const fetchStreak = async () => {
       const response = await fetch(
-        `http://localhost:1042/streak?email=${user?.primaryEmailAddress?.emailAddress}`,
+        `https://speakingserver.vercel.app/?vercelToolbarCode=VAn6poAFX8kQl1z/streak?email=${user?.primaryEmailAddress?.emailAddress}`,
         {
           method: "GET",
           headers: {
