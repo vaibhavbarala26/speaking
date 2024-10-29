@@ -10,6 +10,7 @@ interface Result {
   suggestions?: string;
   vocabulary?: number;
   what_could_have_been_better?: string;
+  feedback?:string
 }
 
 interface Props {

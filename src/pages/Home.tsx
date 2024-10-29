@@ -7,7 +7,7 @@ import loader from "../assets/loader.gif"
 import AIresponse from '../components/AIresponse';
 import { skills } from '../data/Skills';
 import { useClerk } from '@clerk/clerk-react';
-import Showresults from '../components/showresults';
+import Showresults from '../components/Showresults';
 import { Link } from 'react-router-dom';
 interface Language {
   name: string;
@@ -46,7 +46,7 @@ const Home = () => {
   const [response, setResponse] = useState<Response>()
   const [isListening, setIsListening] = useState(false);
   const [text, setText] = useState('');
-  const [error , setError] = useState<boolean>(false)
+
   const [loading, setLoading] = useState<boolean>(false);
   const [showResult , setShowresult] = useState<boolean>(false)
   const [isResultLoading , setIsResultLoading] = useState<boolean>(false)
@@ -74,10 +74,10 @@ const Home = () => {
     message: string;
   }
 
-  interface Window {
-    SpeechRecognition: new () => SpeechRecognition;
-    webkitSpeechRecognition: new () => SpeechRecognition;
-  }
+  // interface Window {
+  //   SpeechRecognition: new () => SpeechRecognition;
+  //   webkitSpeechRecognition: new () => SpeechRecognition;
+  // }
 
 
   useEffect(() => {
@@ -307,7 +307,7 @@ const Home = () => {
             >
               {isListening ? 'Stop Listening' : 'Start Listening'}
             </button>
-            {text ? (<><button className='text-white bg-black p-2 rounded-lg' onClick={(e)=>(handleusersubmit(e))}>Submit</button></>):(<><button className='text-white bg-gray-800 p-2 rounded-lg' disabled={true}>Submit</button></>)}
+            {text ? (<><button className='text-white bg-black p-2 rounded-lg' onClick={()=>(handleusersubmit)}>Submit</button></>):(<><button className='text-white bg-gray-800 p-2 rounded-lg' disabled={true}>Submit</button></>)}
             {/* <form action="" onSubmit={handleusersubmit}>
               <input type="text" value={text} onChange={(e)=>(setText(e.target.value))} name="" id="" />
               <button>Submit</button>            
