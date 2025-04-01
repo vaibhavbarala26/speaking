@@ -197,7 +197,7 @@ const Home = () => {
     setShowresult(true)
     console.log(text , response?.topic , user?.fullName , user?.primaryEmailAddress?.emailAddress);
    
-    const Response = await fetch("https://speakingserver.vercel.app/?vercelToolbarCode=VAn6poAFX8kQl1z/user-chat" , {
+    const Response = await fetch("https://speakingserver.vercel.app/user-chat" , {
       body:JSON.stringify({userinput:text , topic:response?.topic , name:user?.fullName , email:user?.primaryEmailAddress?.emailAddress  } ),
       method:"POST",
       headers:{
@@ -207,7 +207,7 @@ const Home = () => {
     })
     const data = await Response.json()
     console.log(data);
-    setUSerresult(data.message)
+    setUSerresult(data.message.analysis || data.message)
     setShowresult(true)
     setText("")
     setIsResultLoading(false)
@@ -227,7 +227,7 @@ const Home = () => {
         }
       }}>
       {(showResult ) ? (<div>
-       <><Showresults result={UseResult }  loader={isResultLoading} /></>
+       <><Showresults result={UseResult  }  loader={isResultLoading} /></>
         </div>):(<></>)}
           </div>
       <div className="flex flex-col items-center justify-center px-4 md:px-10 py-8">

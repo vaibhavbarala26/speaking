@@ -20,6 +20,7 @@ interface Props {
 
 const Showresults: React.FC<Props> = ({ result, loader }) => {
   const [totalMarks, setTotalMarks] = useState<number>(0);
+console.log(result);
 
   useEffect(() => {
     if (result) {
