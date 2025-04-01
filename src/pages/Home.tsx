@@ -307,7 +307,7 @@ const Home = () => {
             >
               {isListening ? 'Stop Listening' : 'Start Listening'}
             </button>
-            {text ? (<><button className='text-white bg-black p-2 rounded-lg' onClick={()=>(handleusersubmit)}>Submit</button></>):(<><button className='text-white bg-gray-800 p-2 rounded-lg' disabled={true}>Submit</button></>)}
+            {text ? (<><button className='text-white bg-black p-2 rounded-lg' onClick={(e)=>(handleusersubmit(e as unknown as React.FormEvent<HTMLFormElement>))}>Submit</button></>):(<><button className='text-white bg-gray-800 p-2 rounded-lg' disabled={true}>Submit</button></>)}
             {/* <form action="" onSubmit={handleusersubmit}>
               <input type="text" value={text} onChange={(e)=>(setText(e.target.value))} name="" id="" />
               <button>Submit</button>            
